@@ -45,11 +45,13 @@ def get_expensive(prices):
     """
     f = open(prices)
     f = reader(f)
-    s = ""
+    s = 0.0
     for i in f:
-        if s < i[2][1::]:
-            s = i[2][1::]
-    return s
+        a = i[2][1::]
+        if a.isdigit():
+            if a>s:
+                s = a
+    return a
 print(get_expensive("data.csv"))
 
 # Read data from file
